@@ -1,0 +1,27 @@
+apiVersion: v1
+entries:
+  moodle:
+  - apiVersion: v1
+    appVersion: 3.8.2
+    created: "2020-04-11T10:21:53.666241739-04:00"
+    description: Moodle is a learning platform designed to provide educators, administrators
+      and learners with a single robust, secure and integrated system to create personalised
+      learning environments
+    digest: 67fc6124b1081f60a1aa6e871d909d1bc3b2652127db88ac385f4e8608c39b26
+    engine: gotpl
+    home: http://www.moodle.org/
+    icon: https://bitnami.com/assets/stacks/moodle/img/moodle-stack-110x117.png
+    keywords:
+    - moodle
+    - learning
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: moodle
+    sources:
+    - https://github.com/bitnami/bitnami-docker-moodle
+    urls:
+    - https://github.com/Dodobirds/moodle-helm/releases/download/moodle-7.2.9/moodle-7.2.9.tgz
+    version: 7.2.9
+generated: "2020-04-11T10:21:49.382115461-04:00"
