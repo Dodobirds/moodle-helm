@@ -13,8 +13,8 @@
 ##
 image:
   registry: docker.io
-  repository: bitnami/moodle
-  tag: 3.8.2-debian-10-r12
+  repository: dodobirds/moodle
+  tag: init
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -241,7 +241,7 @@ persistence:
   ##
   # storageClass: "-"
   accessMode: ReadWriteOnce
-  size: 8Gi
+  size: 4Gi
   # existingClaim: ""
 
 ## Define affinity for the moodle pod
@@ -270,8 +270,8 @@ persistence:
 ##
 resources:
   requests:
-    memory: 512Mi
-    cpu: 300m
+    memory: 256Mi
+    cpu: 150m
 
 ## Configure extra options for liveness and readiness probes
 ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
@@ -296,13 +296,13 @@ readinessProbe:
 podAnnotations: {}
 ## Prometheus Exporter / Metrics
 ##
-metrics:
-  enabled: false
-  image:
-    registry: docker.io
-    repository: bitnami/apache-exporter
-    tag: 0.7.0-debian-10-r59
-    pullPolicy: IfNotPresent
+##metrics:
+##  enabled: false
+##  image:
+##    registry: docker.io
+##    repository: bitnami/apache-exporter
+##    tag: 0.7.0-debian-10-r59
+##    pullPolicy: IfNotPresent
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -310,9 +310,9 @@ metrics:
     # pullSecrets:
     #   - myRegistryKeySecretName
      ## Metrics exporter pod Annotation and Labels
-  podAnnotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9117"
+     ##  podAnnotations:
+     ## prometheus.io/scrape: "true"
+     ## prometheus.io/port: "9117"
   ## Metrics exporter resource requests and limits
   ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
   ##

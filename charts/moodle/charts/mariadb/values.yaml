@@ -18,8 +18,8 @@
 ##
 image:
   registry: docker.io
-  repository: bitnami/mariadb
-  tag: 10.3.22-debian-10-r60
+  repository: dodobirds/moodledb
+  tag: init
   ## Specify a imagePullPolicy
   ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
   ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -48,20 +48,20 @@ image:
 ## Init containers parameters:
 ## volumePermissions: Change the owner and group of the persistent volume mountpoint to runAsUser:fsGroup values from the securityContext section.
 ##
-volumePermissions:
-  enabled: false
-  image:
-    registry: docker.io
-    repository: bitnami/minideb
-    tag: buster
-    pullPolicy: Always
+##volumePermissions:
+##enabled: false
+##image:
+##  registry: docker.io
+##  repository: bitnami/minideb
+##  tag: buster
+##  pullPolicy: Always
     ## Optionally specify an array of imagePullSecrets.
     ## Secrets must be manually created in the namespace.
     ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
     ##
     # pullSecrets:
     #   - myRegistryKeySecretName
-  resources: {}
+    ##resources: {}
 
 service:
   ## Kubernetes service type, ClusterIP and NodePort are supported at present
